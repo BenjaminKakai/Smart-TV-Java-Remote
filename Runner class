@@ -1,0 +1,80 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class SmartTVRemoteRunner implements SmartTVRemote {
+  private HashMap<Integer, String> buttonActions = new HashMap<>();
+  private Scanner input = new Scanner(System.in);
+
+  @Override
+  public void voiceControl(String command) {
+    System.out.println("Received voice command: " + command);
+  }
+
+  @Override
+  public void gestureControl(String direction) {
+    System.out.println("Received gesture control: " + direction);
+  }
+
+  @Override
+  public void touchScreen(int x, int y) {
+    System.out.println("Touch screen at position (" + x + ", " + y + ")");
+  }
+
+  @Override
+  public void connect(String type, String device) {
+    System.out.println("Connecting to " + device + " using " + type + "...");
+  }
+
+  @Override
+  public void customizeButton(int buttonNumber, String action) {
+    buttonActions.put(buttonNumber, action);
+    System.out.println("Button " + buttonNumber + " now performs action: " + action);
+  }
+
+  @Override
+  public void controlDevice(String deviceName) {
+    System.out.println("Controlling device: " + deviceName);
+  }
+
+  @Override
+  public void launchApp(String appName) {
+    System.out.println("Launching app: " + appName);
+  }
+
+  @Override
+  public void personalize(String background, String buttonLayout) {
+    System.out.println("Personalizing with background " + background + " and button layout " + buttonLayout);
+  }
+
+  public static void main(String[] args) {
+    SmartTVRemoteRunner remote = new SmartTVRemoteRunner();
+
+    System.out.println("Welcome to Smart TV Remote");
+    while (true) {
+      System.out.println("What would you like to do?");
+      System.out.println("1. Voice control");
+      System.out.println("2. Gesture control");
+      System.out.println("3. Touch screen");
+      System.out.println("4. Connect device");
+      System.out.println("5. Customize button");
+      System.out.println("6. Control device");
+      System.out.println("7. Launch app");
+      System.out.println("8. Personalize");
+      System.out.println("0. Quit");
+
+      int choice = remote.input.nextInt();
+      switch (choice) {
+        case 1:
+          System.out.println("Enter voice command: ");
+          remote.voiceControl(remote.input.next());
+          break;
+        case 2:
+          System.out.println("Enter gesture direction: ");
+          remote.gestureControl(remote.input.next());
+          break;
+        case 3:
+          System.out.println("Enter touch screen position x y: ");
+          remote.touchScreen(remote.input.nextInt(), remote.input.nextInt());
+          break;
+        case 4:
+          System.out.println("Enter connection type and
