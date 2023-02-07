@@ -1,0 +1,13 @@
+com.smarttvremote
+|--controller
+|  |--GestureControl.java
+|  |--IRWiFiConnectivity.java
+|  |--VoiceControl.java
+|--display
+|  |--TouchScreen.java
+|  |--Personalization.java
+|--functionality
+|  |--CustomizableButtons.java
+|  |--MultiDeviceControl.java
+|  |--BuiltInApps.java
+|--SmartTVRemote.java
