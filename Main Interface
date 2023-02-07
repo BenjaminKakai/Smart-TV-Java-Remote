@@ -1,0 +1,10 @@
+interface SmartTVRemote {
+  void voiceControl(String command);
+  void gestureControl(String direction);
+  void touchScreen(int x, int y);
+  void connect(String type, String device);
+  void customizeButton(int buttonNumber, String action);
+  void controlDevice(String deviceName);
+  void launchApp(String appName);
+  void personalize(String background, String buttonLayout);
+}
